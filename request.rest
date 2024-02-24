@@ -1,0 +1,45 @@
+GET http://localhost:3000/todos
+###
+
+GET http://localhost:3000/todos/7653
+###
+
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+    "title": "dancing",
+    "completed": false,
+    "description": "on disco nights"
+}
+###
+
+PUT http://localhost:3000/todos/2511
+Content-Type: application/json
+
+{
+    "title": "eating",
+    "completed": true,
+    "description": "for muscle building"
+}
+###
+
+DELETE http://localhost:3000/todos/2827
+###
+
+
+
+
+GET http://localhost:3001/todos
+###
+
+POST http://localhost:3001/todos
+Content-Type: application/json
+
+{
+    "title": "eat",
+    "description": "in calorie deficit"
+}
+###
+
+DELETE http://localhost:3001/todos/558898

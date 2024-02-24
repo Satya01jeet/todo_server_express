@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStartTD": "nodemon index.js"
+    "devStartTD": "nodemon index.js",
+    "devStartHTD": "nodemon hardTodo.js"
   },
   "keywords": [],
   "author": "Yasat",
