@@ -37,8 +37,8 @@ POST http://localhost:3001/todos
 Content-Type: application/json
 
 {
-    "title": "eat",
-    "description": "in calorie deficit"
+    "title": "Dsa questions",
+    "description": "underStand the patterns in dsa questions."
 }
 ###
 
