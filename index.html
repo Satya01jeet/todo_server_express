@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Todo List - using node js and express</title>
 </head>
 <script>
-    function parsedResponse(data){
-        console.log(data);
-    }
-    function callback(resp){
-        resp.json().then(parsedResponse)
-    }
-    function add(){
-        var t = document.getElementById('title').value;
-        var d = document.getElementById('description').value;
-        console.log(t+" "+d)
-        fetch('http://localhost:3001/todos',{
+    function add(e) {
+        e.preventDefault();
+        console.log("CALLED ADDED");
+        var t = document.getElementById("title").value;
+        var d = document.getElementById("description").value;
+        console.log(t + " " + d);
+        fetch("http://localhost:3001/todos", {
             method: "POST",
             body: JSON.stringify({
                 title: t,
-                description: d
+                description: d,
             }),
             headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(callback)
+                "Content-Type": "application/json",
+            },
+        })
+            .then((resp) => {
+                resp.json();
+            })
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => console.log(err));
     }
-    function displayTodo(){
-        fetch('http://localhost:3001/todos',{
-            method: 'GET'
-        }).then((resp) => resp.json())
-        .then((data) => console.log(data))
+    function displayTodo() {
+        fetch("http://localhost:3001/todos", {
+            method: "GET",
+        })
+            .then((resp) => resp.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
     }
     displayTodo();
 </script>
+
 <body>
     <div class="container">
         <div class="add">
-            <div class="item"><h1>Add new Todo</h1></div>
+            <div class="item">
+                <h1>Add new Todo</h1>
+            </div>
             <div class="item title">
                 <div><label id="tiletf">Title</label></div>
-                <div><input class="text title" id="title"></div>
+                <div><input class="text title" id="title" /></div>
             </div>
             <div class="item desc">
                 <div><label id="desctf">Description</label></div>
-                <div><input class="text desc" id="description"></div>
+                <div><input class="text desc" id="description" /></div>
             </div>
             <div class="item">
                 <button class="btn" onclick="add()">Add</button>
             </div>
         </div>
         <div class="showItems">
-            <div><h1>Today's list</h1></div>
+            <div>
+                <h1>Today's list</h1>
+            </div>
             <div class="dashboard" id="mainArea"></div>
         </div>
     </div>
 </body>
+
 </html>
