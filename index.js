@@ -99,4 +99,4 @@ app.delete('/todos/:id',((req,res) => {
 }))
 
 
-app.listen(3000, () => console.log(`todo server running...`))
+app.listen(3000, () => console.log(`Easy todo server running...`))

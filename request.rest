@@ -1,7 +1,7 @@
 GET http://localhost:3000/todos
 ###
 
-GET http://localhost:3000/todos/7653
+GET http://localhost:3000/todos/1111
 ###
 
 POST http://localhost:3000/todos
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:3000/todos/2511
+PUT http://localhost:3000/todos/1111
 Content-Type: application/json
 
 {
@@ -24,11 +24,11 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:3000/todos/2827
+DELETE http://localhost:3000/todos/1111
 ###
 
 
-
+# Hard todo
 
 GET http://localhost:3001/todos
 ###
@@ -37,9 +37,9 @@ POST http://localhost:3001/todos
 Content-Type: application/json
 
 {
-    "title": "Dsa questions",
-    "description": "underStand the patterns in dsa questions."
+    "title": "express",
+    "description": "work on express servers"
 }
 ###
 
-DELETE http://localhost:3001/todos/558898
+DELETE http://localhost:3001/todos/7860
