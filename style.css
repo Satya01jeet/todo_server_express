@@ -43,7 +43,7 @@ label{
     font-size: 16px;
     background-color: rgba(143, 48, 232, 0.76);
     color: white;
-    transition: background-color 0.5s ease, transform 0.5s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .text{
     width: 20vw;
@@ -51,13 +51,14 @@ label{
 .dashboard{
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1em;
-    text-align: center;
+    font-size: 1.5em;
+    text-align: left;
+    width: max-content;
 }
 .btn:hover{
     background-color: rgba(164, 100, 223, 0.588);
     transform: scale(1.1);
 }
 .btn:active{
-    transform: translateY(2px);
+    transform: translateY(1.5px);
 }

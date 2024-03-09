@@ -8,12 +8,9 @@
     <title>Todo List - using node js and express</title>
 </head>
 <script>
-    function add(e) {
-        e.preventDefault();
-        console.log("CALLED ADDED");
+    function add() {
         var t = document.getElementById("title").value;
         var d = document.getElementById("description").value;
-        console.log(t + " " + d);
         fetch("http://localhost:3001/todos", {
             method: "POST",
             body: JSON.stringify({
@@ -28,16 +25,30 @@
                 resp.json();
             })
             .then((data) => {
-                console.log(data);
+                displayTodo();
             })
             .catch((err) => console.log(err));
     }
+
     function displayTodo() {
         fetch("http://localhost:3001/todos", {
             method: "GET",
         })
             .then((resp) => resp.json())
-            .then((data) => console.log(data))
+            .then((data) => {
+                var parentElement = document.getElementById('mainArea');
+                parentElement.innerHTML = "";
+                data.forEach(todo => {
+                    var childElement = document.createElement('div');
+                    var titleElement = document.createElement('span');
+                    titleElement.innerHTML = todo.title + " -> ";
+                    var descriptionElement = document.createElement('span');
+                    descriptionElement.innerHTML = todo.description;
+                    childElement.append(titleElement);
+                    childElement.append(descriptionElement);
+                    parentElement.append(childElement);
+                });
+            })
             .catch((err) => console.log(err));
     }
     displayTodo();
@@ -58,14 +69,16 @@
                 <div><input class="text desc" id="description" /></div>
             </div>
             <div class="item">
-                <button class="btn" onclick="add()">Add</button>
+                <button class="btn" id="addBtn" onclick="add()">Add</button>
             </div>
         </div>
         <div class="showItems">
             <div>
                 <h1>Today's list</h1>
             </div>
-            <div class="dashboard" id="mainArea"></div>
+            <div class="dashboard" id="mainArea">
+                
+            </div>
         </div>
     </div>
 </body>
