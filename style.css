@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nabla&family=Rubik+Scribble&family=Splash&display=swap');
 body{
     background-color: black;
     overflow: hidden;
@@ -11,13 +12,10 @@ body{
 }
 h1{
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Indie Flower', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3em;
+    font-weight: 100;
     width: fit-content;
-}
-label{
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
 }
 .add,.showItems{
     margin-bottom: 2em;
@@ -26,13 +24,20 @@ label{
     align-items: center;
     width: 35vw;
     height: 30vh;
-    /* background-color: blueviolet; */
 }
-.item.title,.item.desc{
+.item.title{
     margin: 0.5rem;
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
+}
+#task{
+    width: 50vw;
+    height: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid whitesmoke;
+    background: black;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    color: white;
 }
 .btn{
     margin: 1rem;

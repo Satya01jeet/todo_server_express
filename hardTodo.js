@@ -27,8 +27,7 @@ app.get("/todos", (req, res) => {
 app.post("/todos", (req, res) => {
   const newTodo = {
     id: Math.floor(Math.random() * 9000),
-    title: req.body.title,
-    description: req.body.description,
+    task: req.body.task,
   };
   try {
     fs.readFile("todos.json", "utf8", (err, data) => {
